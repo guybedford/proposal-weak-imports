@@ -39,7 +39,7 @@ The issue again, is that the empty module would have no named exports, so any pa
 
 ### Web Assembly
 
-Web Assembly needs to support these same types of conditional upgrade paths with very similar reasons to the above.
+Web Assembly needs to support these same types of conditional upgrade paths with very similar reasons to the above (see discussion at https://github.com/WebAssembly/design/issues/1281).
 
 In the ES Module integration of Web Assembly, custom logic might be created to handle and populate weak imports.
 
