@@ -103,7 +103,7 @@ contributors: Guy Bedford
           1. Call _envRec_.InitializeBinding(_in_.[[LocalName]], _namespace_).
         1. Else,
           1. Let _resolution_ be ? _importedModule_.ResolveExport(_in_.[[ImportName]]).
-          1. <del>If _resolution_ is <del>*null* or </del>`"ambiguous"`, throw a *SyntaxError* exception.</del>
+          1. If _resolution_ is <del>*null* or </del>`"ambiguous"`, throw a *SyntaxError* exception.
           1. <ins>If _resolution_ is *null*, then</ins>
             1. <ins>If _in_.[[Weak]] is *false*, throw a *SyntaxError* exception.</ins>
             1. <ins>Call _envRec_.CreateUndefinedWeakImportBinding(_in_.[[LocalName]]).</ins>
