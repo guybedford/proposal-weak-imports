@@ -17,7 +17,7 @@ Since imported bindings are always strict, modules with changing APIs through ne
 For example, consider a module implementing both `oldFeature` and `newFeature`:
 
 ```js
-import { oldFeature, newFeature } From 'std:module';
+import { oldFeature, newFeature } From 'module';
 ```
 
 We would like the ability to use `oldFeature`, but only use `newFeature` if it is available, but if we use the old version of the module without the feature, an error will be thrown in the environment, meaning users instead must write:
@@ -31,7 +31,7 @@ This forces users away from the more explicit syntax of ES modules into an objec
 
 ### Empty Modules
 
-Consider the case where `'std:module'` itself was not resolved at all in the target environment (eg a missing standard library).
+Consider the case where `'module'` itself was not resolved at all in the target environment (eg a missing standard library).
 
 In this case, the fallback mechanism in the environment might in some cases want to provide an `empty` module implementation to allow the import to resolve, but just not have any features present.
 
