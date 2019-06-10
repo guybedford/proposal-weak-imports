@@ -33,7 +33,7 @@ This forces users away from the more explicit syntax of ES modules into an objec
 
 Consider the case where `'module'` itself was not resolved at all in the target environment (eg a missing standard library).
 
-In this case, the fallback mechanism in the environment might in some cases want to provide an `empty` module implementation to allow the import to resolve, but just not have any features present.
+In this case, the fallback mechanism in the environment might in some cases want to provide an `empty` module implementation to allow the import to resolve, but without any exports present.
 
 The issue again, is that the empty module would have no named exports, so any package we might not resolve will require switching to the object import form.
 
