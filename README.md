@@ -77,7 +77,7 @@ We could define a new primitive value representing an empty weak import binding,
 #### Will weak imports encourage looser use of ES Module semantics?
 
 The goal of weak imports is exactly the converse - to ensure that the strong semantics of import bindings can be retained, despite variations of export shape
-and availability between envrionments.
+and availability between environments.
 
 #### Why not use dynamic import?
 
@@ -88,7 +88,8 @@ const { feature } = await import('maybe-module');
 if (feature) feature();
 ```
 
-The problem is that this is just as loose semantically as using`import * as M` for these use cases. In addition we're no longer able to treat the modules as direct static dependencies, and lose the live bindings properties as well.
+The problem is that this is just as loose semantically as using `import * as M` for these use cases. In addition we're no longer able to treat the modules as direct static dependencies, and lose the live bindings properties as well.
+Furthermore, it either harms ergonomics by preventing top-level code from conditionally branching on feature detection, or it leads to unfortunate proliferation of top-level `await`.
 
 ## Specification
 
